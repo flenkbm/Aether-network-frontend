@@ -49,6 +49,7 @@ header {
         color: var(--text-main-X-acc);
         font-size: min(calc(var(--hd-h)/1.13), calc((var(--screen-w)*0.9 - var(--theme-toggler-size))/8.6));
         margin: 0 2.5%;
+        font-weight: bold;
         /*
         8.4 * size = width;
         */
