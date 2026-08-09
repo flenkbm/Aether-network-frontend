@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---->
+    <script src="js/screen-size-getter.js"></script>
+    <script src="js/style-switch.js"></script>
+    <!---->
+    <link rel="stylesheet" href="css/color-scheme.css">
+    <link rel="stylesheet" href="css/login-style.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    <!---->
     <title>Aether network - login</title>
     <script>
         localStorage.setItem("Aether-user", JSON.stringify({"UUID" : 1234567890123456/*16-digit*/, "timestamp" : Date.now()}));
-        window.location.href = window.location.href.replace("login", "index");
+        //window.location.href = window.location.href.replace("login", "index");
     </script>
 </head>
-<body>
-    
+<body class="dark-mode">
+    <header>
+        <h1 id="title">Aether Network</h1>
+        <img src="img/theme-toggler-dark.png" id="theme-toggler" onclick="toggleTheme()">
+    </header>
 </body>
 </html>

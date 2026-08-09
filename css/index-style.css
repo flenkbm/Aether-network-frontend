@@ -28,34 +28,6 @@ body {
     background: var(--bg-main);
 }
 
-header {
-    --hd-h: 50px;
-    background: var(--bg-dk);
-    width: 100%;
-    height: var(--hd-h);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /**/
-    --theme-toggler-size: min(100px, calc(var(--hd-h)*0.4));
-    img#theme-toggler {
-        aspect-ratio: 1/1;
-        height: var(--theme-toggler-size);
-        background: var(dbg-bg41);
-        margin: 0 2.5%;
-    }
-    h1#title {
-        font-family: 'Courier New', Courier, monospace;
-        color: var(--text-main-X-acc);
-        font-size: min(calc(var(--hd-h)/1.13), calc((var(--screen-w)*0.9 - var(--theme-toggler-size))/8.6));
-        margin: 0 2.5%;
-        font-weight: bold;
-        /*
-        8.4 * size = width;
-        */
-    }
-}
-
 main {
     --main-padding-w: 7%;
     padding: var(--main-padding-w) 20px;
@@ -100,7 +72,7 @@ div#account-block {
             height: calc(15px - var(--bord-w)*2 - 4px);
             width: calc(var(--t-w) - 88.87px - 10px - var(--bord-w)*2 - 2px);
             /**/
-            border-image-source: url("../../img/border-slice-Xacc.png");
+            border-image-source: url("../img/border-slice-Xacc.png");
             border-image-repeat: round;
             border-image-slice: 10;
             border-image-width: var(--bord-w);
