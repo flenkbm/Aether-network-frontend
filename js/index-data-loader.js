@@ -22,8 +22,8 @@ function loadUserData() {
   console.log(userlogdata);
   const now = Date.now();
   console.log(`Now: ${now}`);
-  const timeout = 12 * 60 * 60 * 1000; // 12hrs timeout (times minutes, seconds, milliseconds)
-  //const timeout = 60 * 1000; // 1min test timeout
+  //const timeout = 12 * 60 * 60 * 1000; // 12hrs timeout (times minutes, seconds, milliseconds)
+  const timeout = 5 * 1000; // 5sec test timeout
   if (now - userlogdata["timestamp"] >= timeout) {
     localStorage.removeItem("Aether-user");
     gotoLogin();
