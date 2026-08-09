@@ -71,7 +71,7 @@ div#account-block {
         div#xp-bar {
             --bord-w: 3px;
             height: calc(15px - var(--bord-w)*2 - 4px);
-            width: calc(var(--t-w) - 88.87px - var(--bord-w)*2 - 4px);
+            width: calc(var(--t-w) - 88.87px - var(--bord-w)*2 - 2*2px - 5px);
             margin-right: calc(var(--bord-w) + 2px);
             /**/
             border-image-source: var(--border-img-main);
@@ -86,6 +86,7 @@ div#account-block {
         }
         p#xp-disp {
             color: var(--text-main);
+            margin-top: -2px;
         }
     }
     p#total-progress {

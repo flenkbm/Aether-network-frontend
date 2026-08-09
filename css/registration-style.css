@@ -36,7 +36,7 @@ div#reg-block {
     padding: min(20px, 5%);
     --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - var(--bord-w)*2 - min(20px, 5%)*2), 400px);
     width: var(--t-w);
-    height: 200px;
+    height: 250px;
     
 }
 
