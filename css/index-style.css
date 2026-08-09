@@ -29,8 +29,8 @@ body {
 }
 
 main {
-    --main-padding-w: 7%;
-    padding: var(--main-padding-w) 20px;
+    --main-padding-w: 10%;
+    padding: 5% var(--main-padding-w);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ main {
 div#account-block {
     background-color: var(--bg-sec);
     padding: 10px;
-    --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - 10px), calc(400px + 20px));
+    --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2), calc(400px + 20px));
     width: var(--t-w);
     border: 2px var(--border-2) dashed;
     /**/
@@ -61,6 +61,7 @@ div#account-block {
         }
     }
     div#xp-block{
+        width: 100%;
         margin-bottom: 5px;
         display: flex;
         flex-wrap: nowrap;
@@ -70,9 +71,10 @@ div#account-block {
         div#xp-bar {
             --bord-w: 3px;
             height: calc(15px - var(--bord-w)*2 - 4px);
-            width: calc(var(--t-w) - 88.87px - 10px - var(--bord-w)*2 - 2px);
+            width: calc(var(--t-w) - 88.87px - var(--bord-w)*2 - 4px);
+            margin-right: calc(var(--bord-w) + 2px);
             /**/
-            border-image-source: url("../img/border-slice-Xacc.png");
+            border-image-source: var(--border-img-main);
             border-image-repeat: round;
             border-image-slice: 10;
             border-image-width: var(--bord-w);

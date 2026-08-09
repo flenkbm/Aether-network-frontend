@@ -3,14 +3,10 @@
     padding: 0;
     transition: 0.3s;
     transition-property: background, color, background-color, src;
-    font-family: 'Segoe UI', Tahoma, sans-serif; 
-}
-p, h1, h2, h3, h4, h5 {
-    width: fit-content;
 }
 
 header {
-    --hd-h: 50px;
+    --hd-h: 55px;
     background: var(--bg-dk);
     width: 100%;
     height: var(--hd-h);
@@ -26,9 +22,10 @@ header {
         margin: 0 2.5%;
     }
     h1#title {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Iceland';
+        width: fit-content;
         color: var(--text-main-X-acc);
-        font-size: min(calc(var(--hd-h)/1.13), calc((var(--screen-w)*0.9 - var(--theme-toggler-size))/8.6));
+        font-size: min(calc(var(--hd-h)), calc((var(--screen-w)*0.9 - var(--theme-toggler-size))/6.4));
         margin: 0 2.5%;
         font-weight: bold;
         /*

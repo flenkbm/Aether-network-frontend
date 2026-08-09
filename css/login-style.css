@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    transition-property: background, color, background-color, src;
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+}
+p, h1, h2, h3, h4, h5 {
+    width: fit-content;
+}
+
+body {
+    background: var(--bg-main);
+}
+
+main {
+    --main-padding-w: 7%;
+    padding: 20px var(--main-padding-w);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    div#reg-block {
+        background-color: var(--bg-sec-dk);
+        padding: 20px;
+        --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - 10px - 10px), calc(400px + 40px));
+        width: var(--t-w);
+        /**/
+        border-image-source: var(--border-img-main);
+        border-image-repeat: round;
+        border-image-slice: 10;
+        --bord-w: 5px;
+        border-image-width: var(--bord-w);
+        border-image-outset: var(--bord-w);
+        /**/
+        height: 200px;
+        /**/
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        label {
+            color: var(--text-main);
+        }
+        input {
+            background-color: var(--bg-sec-X-lt);
+            border: solid 2px var(--border-2);
+            border-radius: 5px;
+            padding: 2px;
+            color: var(--text-sec-X-acc);
+        }
+        input::placeholder {
+            color: var(--text-sec-acc   );
+        }
+        input:focus {
+            outline: none;
+            border: dashed 2px var(--border-2-acc);
+        }
+    }
+}
