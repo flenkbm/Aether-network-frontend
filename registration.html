@@ -26,17 +26,17 @@
         <div id="reg-block">
             <div class="cont">
                 <label for="nickname">Никнейм:</label>
-                <input type="text" id="nickname-input" name="nickname" placeholder="VasyaPupkin">
+                <input type="text" id="nickname-input" name="nickname" placeholder="VasyaPupkin" maxlength="16">
                 <label for="pswd">Пароль:</label>
-                <input type="password" id="password-input" name="pswd" placeholder="SuperPassword3000">
+                <input type="password" id="password-input" name="pswd" placeholder="SuperPassword3000" minlength="6">
                 <label for="pswd-repeat">Повторите пароль:</label>
-                <input type="password" id="password-repeat" name="pswd-repeat" placeholder="SuperPassword3000">
-                <button id="submit" onclick="login">Зарегистрироваться</button>
+                <input type="password" id="password-repeat" name="pswd-repeat" placeholder="SuperPassword3000" minlength="6">
+                <button id="submit" onclick="registration()">Зарегистрироваться</button>
             </div>
             <div class="overlay hidden">
                 <div id="loading-circle" class="hidden"></div>
                 <div id="result-message" class="hidden"></div>
-                <button id="after-action"></button>
+                <button id="after-action" ></button>
             </div>
         </div>
     </main>
