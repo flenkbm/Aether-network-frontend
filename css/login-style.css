@@ -61,7 +61,7 @@ div#reg-block div.cont {
         border-radius: 5px;
         padding: 2px;
         color: var(--text-sec-X-acc);
-        width: 60%;
+        width: 70%;
         font-size: 15px;
     }
     input::placeholder {
@@ -84,13 +84,88 @@ div#reg-block div.cont {
     }
 }
 
-div.overlay {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    /**/
-
+.hidden {
+    display: none !important;
+    * {
+        display: none !important;
+    }
 }
 
-.hidden {
-    display: none;
+div#overlay {
+    width: var(--t-w);
+    height: 200px;
+    margin-top: -200px;
+    /**/
+    position: absolute;
+    background-color: var(--bg-sec-dk);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#loading-circle {
+    background-image: linear-gradient(-90deg, var(--border-main) 30%, var(--border-3) 120%);
+    border: 6px solid var(--bg-sec-dk);
+    border-top-color: transparent;
+    border-radius: 1000px;
+    animation: circle-anim 1s linear infinite;
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    div#loading-circle-inner {
+        background: var(--bg-sec-dk);
+        border-radius: 1000px;
+        border: 1px solid var(--bg-sec-dk);
+        height: 30px;
+        width: 30px;
+        margin-left: -0.5px;
+        margin-top: -0.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: circle-anim 1s linear infinite;
+        animation-direction: reverse;
+        p {
+            transform: rotate(90deg);
+            margin-left: 4.5px;
+        }
+    }
+}
+
+div#result-message {
+    text-align: justify;
+    width: 75%;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+div#result-message[techflag="1"] {
+    text-align: center;
+}
+
+button#after-action {
+    background-color: var(--bg-dk);
+    border: solid 3px var(--border-main);
+    height: 40px;
+    width: 100%;
+    margin-top: auto;
+    color: var(--text-main-acc);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+@keyframes circle-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(130deg);
+  }
+  70% {
+    transform: rotate(230deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
