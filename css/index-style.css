@@ -45,6 +45,7 @@ div#account-block {
     --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2), calc(400px + 20px));
     width: var(--t-w);
     border: 2px var(--border-2) dashed;
+    margin-bottom: 20px;
     /**/
     div.top-block {
         display: flex;

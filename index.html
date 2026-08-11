@@ -38,6 +38,21 @@
         <div id="scanner-block">
 
         </div>
+        <button onclick="localStorage.removeItem(\"Aether-user\")" class="temp">Временная кнопка выхода</button>
+        <style>
+            button.temp {
+                margin-top: 20px;
+                width: 100px;
+                background-image: linear-gradient(120deg, var(--bg-sec-X-lt) -20%, var(--bg-sec-lt));
+                color: var(--text-sec-acc);
+                border: none;
+                border-image-source: url("img/border-slice-X-acc-dark.png");;
+                border-image-repeat: round;
+                border-image-slice: 10;
+                border-image-width: 4px;
+                border-image-outset: 4px;
+            }
+        </style>
     </main>
 </body>
 </html>
