@@ -22,19 +22,20 @@ function login() {
     }
     window.fetch(`http://88.210.12.42:8000/API/login?nickname=${username}&password=${password}`)
     .then((response) => {
-      return response.text();
+      return response.json();
     })
-    .then((text) => {
+    .then((json) => {
         while (Date.now() - reveal_time <= 2500) {}
         hide(loading_circle);
         show(after_button);
-        if (text === "-1") {
+        if (json === "-1") {
             result_message.removeAttribute("techflag");
             result_message.textContent = "Ошибка! Введён неправильный логин или пароль.";
             after_button.textContent = "Попробовать снова";
             after_button.setAttribute("onclick", "retry()");
         } else {
-            localStorage.setItem("Aether-user", JSON.stringify({"UUID" : text.replace("\"", ""), "timestamp" : Date.now()}));
+
+            localStorage.setItem("Aether-user", JSON.stringify({"UUID" : json, "timestamp" : Date.now()}));
             result_message.removeAttribute("techflag");
             result_message.textContent = "Вход прошёл успешно!";
             after_button.textContent = "На главную";
