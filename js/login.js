@@ -15,7 +15,7 @@ function login() {
         show(overlay);
         hide(loading_circle);
         result_message.removeAttribute("techflag");
-        result_message.textContent = "Для регистрации необходимо ввести и логин, и пароль";
+        result_message.textContent = "Для регистрации необходимо ввести и логин, и пароль.";
         after_button.textContent = "Попробовать снова";
         after_button.setAttribute("onclick", "retry()");
         return;
@@ -34,7 +34,7 @@ function login() {
             after_button.textContent = "Попробовать снова";
             after_button.setAttribute("onclick", "retry()");
         } else {
-            localStorage.setItem("Aether-user", JSON.stringify({"UUID" : text, "timestamp" : Date.now()}));
+            localStorage.setItem("Aether-user", JSON.stringify({"UUID" : text.replace("\"", ""), "timestamp" : Date.now()}));
             result_message.removeAttribute("techflag");
             result_message.textContent = "Вход прошёл успешно!";
             after_button.textContent = "На главную";
