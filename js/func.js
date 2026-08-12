@@ -47,4 +47,4 @@ async function animRewrite(el=HTMLElement, totext=String, fpl=3) {//fpl - frames
 }
 
 const API = "https://88.210.12.42:8000/API/";
-const openfiles = "https://88.210.12.42/API/openfiles";
+const openfiles = "https://88.210.12.42/API/openfiles/";
