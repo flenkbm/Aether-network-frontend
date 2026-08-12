@@ -1,7 +1,3 @@
-function hide(el) { el.classList.add('hidden'); }
-function show(el) { el.classList.remove('hidden'); }
-
-
 function registration() {
     var overlay = document.getElementById("overlay");
     var loading_circle = document.getElementById("loading-circle");

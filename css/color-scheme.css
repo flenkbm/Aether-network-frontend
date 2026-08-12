@@ -45,6 +45,7 @@ body.dark-mode {
     --border-2: hsl(260, 10%, 50%);
     --border-2-acc: hsl(260, 15%, 70%);
     --border-3: hsl(235, 100%, 60%);
+    --border-4: hsl(180, 100%, 50%);
     /**/
     --xp-col: hsl(60, 100%, 50%);
 }

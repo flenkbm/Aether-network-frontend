@@ -1,6 +1,3 @@
-function hide(el) { el.classList.add('hidden'); }
-function show(el) { el.classList.remove('hidden'); }
-
 function login() {
     var overlay = document.getElementById("overlay");
     var loading_circle = document.getElementById("loading-circle");
@@ -25,6 +22,7 @@ function login() {
       return response.json();
     })
     .then((json) => {
+        console.log(json);
         while (Date.now() - reveal_time <= 2500) {}
         hide(loading_circle);
         show(after_button);

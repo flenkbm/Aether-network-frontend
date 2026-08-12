@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!---->
+    <script src="https://unpkg.com/qr-scanner" type="module"></script>
+    <script src="js/func.js"></script>
     <script src="js/screen-size-getter.js"></script>
     <script src="js/style-switch.js"></script>
     <script src="js/index-data-loader.js"></script>
+    <script src="js/scanner.js"></script>
     <!---->
     <link rel="stylesheet" href="css/color-scheme.css">
     <link rel="stylesheet" href="css/index-style.css">
@@ -26,17 +29,21 @@
     <main>
         <div id="account-block">
             <div class="top-block">
-                <h2 id="nickname">nickname</h2>
+                <h2 id="nickname">________________</h2>
                 <p id="lvl">lvl __</p>
             </div>
             <div id="xp-block">
                 <p id="xp-disp">EXP ___/___</p>
-                <div id="xp-bar"></div>
+                <div id="xp-bar" style="--xp-percent: 0%;"><div id="xp-bar-inner"></div></div>
             </div>
             <p id="total-progress">Прогресс сбора элементов: __ из __</p>
         </div>
         <div id="scanner-block">
-
+            <button id="start-scan" onclick="startScanner()">Включить сканер</button>
+            <div id="vid-cont" class="hidden">
+                <video id="scan-vid-disp"></video>
+            </div>
+            <button id="stop-scan" onclick="stopScanner(false)" class="hidden">Выключить сканер</button>
         </div>
         <button onclick="localStorage.removeItem('Aether-user');location.reload()" class="temp">Временная кнопка выхода</button>
         <style>
