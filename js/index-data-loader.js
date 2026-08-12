@@ -13,7 +13,7 @@ function gotoLogin() {
 }
 
 function loadUserData() {
-    window.fetch(`http://88.210.12.42/API/openfiles/${UUID}.json`)
+    window.fetch(openfiles+`${UUID}.json`)
     .then((response) => {
         return response.json();
     })
@@ -37,7 +37,7 @@ function loadUserData() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.fetch(`http://88.210.12.42/API/openfiles/appdata.json`).then((response) => {
+    window.fetch(openfiles+"appdata.json").then((response) => {
         return response.json();
     }).then((json) => {
         appdata = json;

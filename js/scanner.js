@@ -19,7 +19,7 @@ async function resultProcess(res) {
         qrScanner.start();
         return;
     }
-    window.fetch(`http://88.210.12.42:8000/API/scan?code=${res}&uuid=${UUID}`)
+    window.fetch(API+`scan?code=${res}&uuid=${UUID}`)
     .then((response) => {
         return response.json();
     })

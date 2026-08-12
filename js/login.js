@@ -17,7 +17,7 @@ function login() {
         after_button.setAttribute("onclick", "retry()");
         return;
     }
-    window.fetch(`http://88.210.12.42:8000/API/login?nickname=${username}&password=${password}`)
+    window.fetch(API+`login?nickname=${username}&password=${password}`)
     .then((response) => {
       return response.json();
     })
