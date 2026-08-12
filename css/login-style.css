@@ -36,7 +36,7 @@ div#reg-block {
     padding: min(20px, 5%);
     --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - var(--bord-w)*2 - min(20px, 5%)*2), 400px);
     width: var(--t-w);
-    height: 200px;
+    height: 220px;
     
 }
 
@@ -82,6 +82,15 @@ div#reg-block div.cont {
         font-weight: 500;
         font-size: 20px;
     }
+    a {
+        width: fit-content;
+        align-self: center;
+        color: var(--text-sec);
+        text-decoration: none;
+        span {
+            color: var(--link);
+        }
+    }
 }
 
 .hidden {
@@ -93,8 +102,8 @@ div#reg-block div.cont {
 
 div#overlay {
     width: var(--t-w);
-    height: 200px;
-    margin-top: -200px;
+    height: 220px;
+    margin-top: -220px;
     /**/
     position: absolute;
     background-color: var(--bg-sec-dk);

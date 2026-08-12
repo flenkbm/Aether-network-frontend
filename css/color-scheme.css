@@ -11,6 +11,10 @@ body {
     --text-main: hsl(200, 80%, 40%);
     --text-main-acc: hsl(200, 100%, 40%);
     --text-main-X-acc: hsl(200, 100%, 50%);
+    --text-sec: hsl(220, 00%, 90%);
+    --text-sec-acc: hsl(220, 00%, 70%);
+    --text-sec-X-acc: hsl(220, 00%, 50%);
+    --link: hsl(240, 100%, 50%);
     /**/
     --border-main: hsl(200, 80%, 60%);
     --border-img-main: url("../img/border-slice-X-acc-light.png");
@@ -38,6 +42,7 @@ body.dark-mode {
     --text-sec: hsl(220, 00%, 50%);
     --text-sec-acc: hsl(220, 00%, 70%);
     --text-sec-X-acc: hsl(220, 00%, 90%);
+    --link: hsl(240, 80%, 60%);
     /**/
     --border-main: hsl(200, 80%, 60%);
     --border-img-main: url("../img/border-slice-X-acc-dark.png");
