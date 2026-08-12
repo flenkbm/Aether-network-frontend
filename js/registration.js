@@ -50,7 +50,7 @@ function registration() {
       return response.json();
     })
     .then((json) => {
-        while (Date.now() - reveal_time <= 2500) {}
+        while (Date.now() - reveal_time <= 1500) {}
         hide(loading_circle);
         show(after_button);
         if (json === "-1") {
