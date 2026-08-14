@@ -35,8 +35,8 @@ function loadUserData() {
             animRewrite(document.getElementById("nickname"), userdata["nickname"]);
         }
         animRewrite(lvlplace, `lvl ${userdata["LVL"]}`, 6);
-        xpbar.style.setProperty("--xp-percent", `${userdata["EXP"]/appdata["levelup-exp"][userdata["LVL"]+1]*100}%`);
-        animRewrite(xpplace, `EXP ${userdata["EXP"]}/${appdata["levelup-exp"][userdata["LVL"]+1]}`);
+        xpbar.style.setProperty("--xp-percent", `${userdata["EXP"]/appdata["levelup-EXP"][userdata["LVL"]+1]*100}%`);
+        animRewrite(xpplace, `EXP ${userdata["EXP"]}/${appdata["levelup-EXP"][userdata["LVL"]+1]}`);
         progressplace.textContent = `Прогресс сбора элементов: ${userdata["created"].length} из ${appdata["total-elements"]}`;
     });
 }
