@@ -45,7 +45,7 @@ function registration() {
         after_button.setAttribute("onclick", "retry()");
         return;
     }
-    window.fetch(API+`registration?nickname=${username}&password=${password}`)
+    window.fetch(API+`registration?nickname=${username}&password=${password}`, { method: 'POST' })
     .then((response) => {
       return response.json();
     })
@@ -59,7 +59,7 @@ function registration() {
             after_button.textContent = "Попробовать снова";
             after_button.setAttribute("onclick", "retry()");
         } else {
-            localStorage.setItem("Aether-user", JSON.stringify({"UUID" : json, "timestamp" : Date.now()}));
+            localStorage.setItem("Aether-user", JSON.stringify({"SID" : json, "timestamp" : Date.now()}));
             result_message.removeAttribute("techflag");
             result_message.textContent = "Регистрация прошла успешно!";
             after_button.textContent = "На главную";

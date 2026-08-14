@@ -43,7 +43,7 @@
             <div id="vid-cont" class="hidden">
                 <video id="scan-vid-disp"></video>
             </div>
-            <button id="stop-scan" onclick="stopScanner(false)" class="hidden">Выключить сканер</button>
+            <button id="stop-scan" onclick="stopScanner('cancel')" class="hidden">Выключить сканер</button>
         </div>
         <button onclick="localStorage.removeItem('Aether-user');location.reload()" class="temp">Временная кнопка выхода</button>
         <style>

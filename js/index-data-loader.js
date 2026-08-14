@@ -1,5 +1,5 @@
 // var init
-var UUID;
+var SID;
 var userdata;
 var appdata;
 let initial_loading = true;
@@ -13,11 +13,16 @@ function gotoLogin() {
 }
 
 function loadUserData() {
-    window.fetch(openfiles+`${UUID}.json`)
+    window.fetch(API+"userdata/"+SID)
     .then((response) => {
         return response.json();
     })
     .then((json) => {
+        if (json == "-1") {
+            localStorage.removeItem("Aether-user");
+            gotoLogin();
+            return;
+        }
         userdata = json;
         console.log(userdata);//test thing
         // Data loading onto the page part
@@ -43,23 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         appdata = json;
         console.log(appdata);
         //
-        var raw_userlogdata = localStorage.getItem("Aether-user");
-        console.log(raw_userlogdata);
-        if (!raw_userlogdata) {
+        SID = localStorage.getItem("Aether-user");
+        if (SID == null) {
             gotoLogin();
-            return;
+        } else {
+            loadUserData();
         }
-        var userlogdata = JSON.parse(raw_userlogdata);
-        const now = Date.now();
-        console.log(`Now: ${now}`);
-        const timeout = 12 * 60 * 60 * 1000; // 12hrs timeout (times minutes, seconds, milliseconds)
-        //const timeout = 5 * 1000; // 5sec test timeout
-        if (now - userlogdata["timestamp"] >= timeout) {
-        localStorage.removeItem("Aether-user");
-            gotoLogin();
-            return;
-        }
-        UUID = userlogdata["UUID"];
-        loadUserData();
     })
 });

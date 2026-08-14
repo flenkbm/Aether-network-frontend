@@ -22,18 +22,24 @@ async function resultProcess(res) {
         return;
     }
     console.log("trying verifying")
-    window.fetch(API+`scan?code=${res}&uuid=${UUID}`)
+    window.fetch(API+`scan?code=${res}&sid=${SID}`, { method: 'POST' })
     .then((response) => {
         return response.json();
     })
     .then((json) => {
         console.log(json);
-        if (json == "-1" || json == "-2") {
+        if (json == "-2") {
             qrScanner.start();
-            return;
+            return
+        } else if (json == "-3") {
+            stopScanner("cooldown", Math.ceil((userdata["nextscans"][res]-Date.now())/1000/60));
+            return
+        } else if (json == "-1") {
+            stopScanner("sid error");
+            return
         }
         loadUserData();
-        stopScanner(true);
+        stopScanner("success");
         return;
     });
 }
@@ -46,21 +52,35 @@ function startScanner() {
     hide(document.getElementById("start-scan"));
 }
 
-async function stopScanner(success) {
+async function stopScanner(res, dt=0) {
     let startScan = document.getElementById("start-scan");
     qrScanner.stop();
     console.log("scanner stopped trying to work");
     hide(document.getElementById("vid-cont"));
     hide(document.getElementById("stop-scan"));
     show(startScan);
-    if (success) {
+    var btn_text = "Начать сканирование";
+    var timetoread = 1500;
+    if (res == "success") {
         startScan.textContent = "Код прочитан успешно!";
-    } else {
+    } else if (res == "cancel") {
         startScan.textContent = "Сканирование отменено.";
+    } else if (res == "cooldown") {
+        startScan.textContent = `Точка восстанавливается.\nПопробуйте через ${Math.floor(dt/60)}ч ${dt%60}мин`;
+        startScan.style.setProperty("height", "60px");
+        timetoread = 2500;
+    } else if (res == "sid error") {
+        startScan.textContent = "Произошла ошибка!\nНеобходимо перезагрузить страницу.";
+        btn_text = "Нажмите чтобы перезагрузить";
+        startScan.setAttribute("onclick", "window.location.reload()");
+        startScan.style.setProperty("height", "60px");
+        localStorage.removeItem("Aether-user");
+        timetoread = 2500;
     }
     startScan.setAttribute("disabled", "");
     setTimeout(function () {
-        animRewrite(startScan, "Начать сканирование");
+        animRewrite(startScan, btn_text);
         startScan.removeAttribute("disabled");
-    }, 1500)   
+        startScan.style.removeProperty("height");
+    }, timetoread)   
 }
