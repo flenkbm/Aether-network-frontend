@@ -22,7 +22,16 @@ async function resultProcess(res) {
         return;
     }
     console.log("trying verifying")
-    window.fetch(API+`scan?code=${res}&sid=${SID}`, { method: 'POST' })
+    fetch("https://88.210.12.42:8000/API/scan", {
+        method: "POST",
+        body: JSON.stringify({
+            code: res,
+            sid: SID
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
     .then((response) => {
         return response.json();
     })
