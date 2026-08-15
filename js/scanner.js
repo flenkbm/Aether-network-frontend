@@ -48,6 +48,7 @@ async function resultProcess(res) {
             return
         }
         loadUserData();
+        loadToplist();
         stopScanner("success");
         return;
     });

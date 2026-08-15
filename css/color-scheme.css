@@ -14,6 +14,8 @@ body {
     --text-main: hsl(180, 100%, 90%);
     --text-main-acc: hsl(180, 100%, 80%);
     --text-main-X-acc: hsl(180, 100%, 65%);
+    --text-sec-X-dk: hsl(220, 0%, 25%);
+    --text-sec-dk: hsl(220, 0%, 40%);
     --text-sec: hsl(220, 00%, 50%);
     --text-sec-acc: hsl(220, 00%, 70%);
     --text-sec-X-acc: hsl(220, 00%, 90%);

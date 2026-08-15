@@ -42,6 +42,24 @@ function loadUserData() {
     });
 }
 
+function loadToplist() {
+    window.fetch(API+"toplist")
+    .then((response) => {
+        return response.json();
+    })
+    .then((json) => {
+        console.log(json);
+        var toplist = document.getElementById("toplist");
+        for (let i = 0; i < 10; i += 1) {
+            if (json[i] == null) {
+                toplist.children[i].classList.add("hidden");
+            } else {
+                toplist.children[i].innerHTML=`${json[i][0]}<span id="toplist-LVL-disp">LVL ${json[i][1]}</span>`
+            }
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     window.fetch(openfiles+"appdata.json").then((response) => {
         return response.json();
@@ -55,5 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             loadUserData();
         }
+        loadToplist();
     })
 });

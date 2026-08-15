@@ -29,7 +29,7 @@ body {
 }
 
 main {
-    --main-padding-w: 10%;
+    --main-padding-w: 7%;
     padding: 5% var(--main-padding-w);
     overflow: hidden;
     display: flex;
@@ -37,14 +37,14 @@ main {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: nowrap;
+    --in-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - 10px*2), calc(400px + 20px));
 }
 
 div#account-block {
     background-color: var(--bg-sec);
     padding: 10px;
-    --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2), calc(400px + 20px));
-    width: var(--t-w);
-    border: 2px var(--border-2) dashed;
+    width: var(--in-w);
+    border: 2px var(--border-4) dashed;
     margin-bottom: 20px;
     /**/
     div.top-block {
@@ -72,7 +72,7 @@ div#account-block {
         div#xp-bar {
             --bord-w: 3px;
             height: calc(15px - var(--bord-w)*2 - 4px);
-            width: calc(var(--t-w) - 88.87px - var(--bord-w)*2 - 2*2px - 5px);
+            width: calc(var(--in-w) - 88.87px - var(--bord-w)*2 - 2*2px - 5px);
             margin-right: calc(var(--bord-w) + 2px);
             /**/
             border-image-source: var(--border-img-main);
@@ -103,8 +103,9 @@ div#account-block {
 div#scanner-block {
     border: 3px solid var(--border-main);
     padding: 10px;
-    --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2), calc(400px + 20px));
-    width: var(--t-w);
+    width: var(--in-w);
+    background-color: var(--bg-sec-dk);
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,6 +137,46 @@ div#scanner-block {
     }
     svg.code-outline-highlight {
         stroke: var(--border-4) !important;
+    }
+}
+
+div#toplist-block {
+    background-color: var(--bg-sec);
+    padding: 10px;
+    width: var(--in-w);
+    border: 2px var(--border-4) dashed;
+    margin-bottom: 20px;
+    /**/
+    ol#toplist {
+        list-style-position: inside;
+        color: var(--text-main);
+        font-size: 18px;
+        margin-left: 5px;
+        /**/
+        li::marker {
+            color: var(--text-sec-dk);
+            font-weight: bold;
+            font-size: 16px;
+        }
+        li#toplist-1 {
+            color: var(--text-main-X-acc);
+            font-weight: bold;
+        }
+        li#toplist-1::marker {
+            color: var(--text-main-X-acc);
+            font-size: 18px;
+        }
+        li#toplist-10 {
+            margin-left: -9px;
+        }
+        li span#toplist-LVL-disp {
+            display: inline-block;
+            font-weight: normal;
+            width: fit-content;
+            position: absolute;
+            right: calc(var(--main-padding-w) + 10px - 3px);
+            color: var(--xp-col)
+        }
     }
 }
 
