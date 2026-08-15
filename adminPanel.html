@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---->
+    <script src="js/func.js"></script>
+    <script src="js/screen-size-getter.js"></script>
+    <!---->
+    <link rel="stylesheet" href="css/color-scheme.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    <!---->
+    <title>Aether network</title>
+    <script>
+        //localStorage.clear();
+        //console.log(window.location);
+    </script>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1 id="title">Aether Network</h1>
+    </header>
+    <main>
+        <div id="floating">
+            <p id="result">result will be here</p>
+            <input type="password" id="admin-code" placeholder="admin code">
+        </div>
+        <div class="command-block">
+            <h3>Make code</h3>
+            <input type="text" id="code-inp" placeholder="uuid4-code">
+            <input type="text" id="element-inp" placeholder="element for reward">
+            <input type="text" id="elem-count-inp" placeholder="amount of element">
+            <input type="text" id="exp-inp" placeholder="amount of exp">
+            <input type="text" id="cooldown-inp" placeholder="cooldown (in ms)">
+            <button class="submit">Enter &lt;/></button>
+        </div>
+        <script>
+            fetch("https://88.210.12.42:8000/API/", {
+                method: "POST",
+                body: JSON.stringify({
+                    
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            .then((response) => response.text())
+            .then((text) => console.log(text))
+        </script>
+        <div class="command-block">
+
+        </div>
+        <script>
+            fetch("https://88.210.12.42:8000/API/", {
+                method: "POST",
+                body: JSON.stringify({
+                    
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            .then((response) => response.text())
+            .then((text) => console.log(text))
+        </script>
+        <div class="command-block">
+
+        </div>
+        <script>
+            fetch("https://88.210.12.42:8000/API/", {
+                method: "POST",
+                body: JSON.stringify({
+                    
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            .then((response) => response.text())
+            .then((text) => console.log(text))
+        </script>
+        <div id="tech"></div>
+    </main>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: 0.3s;
+            transition-property: background, color, background-color, src;
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+        }
+        p, h1, h2, h3, h4, h5 {
+            color: var(--text-main);
+            width: fit-content;
+        }
+
+        body {
+            background: var(--bg-main);
+        }
+
+        main {
+            --main-padding-w: 7%;
+            padding: 20px var(--main-padding-w);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+        }
+
+        div.command-block {
+            border-image-source: url("img/border-slice-X-acc.png");
+            border-image-repeat: round;
+            border-image-slice: 10;
+            --bord-w: 5px;
+            border-image-width: var(--bord-w);
+            border-image-outset: var(--bord-w);
+            background-color: var(--bg-sec-dk);
+            margin-bottom: 45px;
+            /**/
+            padding: min(20px, 5%);
+            --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - var(--bord-w)*2 - min(20px, 5%)*2), 400px);
+            width: var(--t-w);
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            *{
+                margin-bottom: 2px;
+            }
+            input {
+                background-color: var(--bg-sec-X-lt);
+                border: solid 2px var(--border-2);
+                border-radius: 5px;
+                padding: 2px;
+                color: var(--text-sec-X-acc);
+                width: 70%;
+                font-size: 15px;
+            }
+            input::placeholder {
+                color: var(--text-sec-acc);
+            }
+            input:focus {
+                outline: none;
+                border: dashed 2px var(--border-2-acc);
+            }
+            button.submit {
+                background-color: var(--bg-dk);
+                border: solid 3px var(--border-main);
+                height: 40px;
+                width: 80%;
+                align-self: center;
+                margin-top: auto;
+                color: var(--text-main-acc);
+                font-weight: 500;
+                font-size: 20px;
+            }
+        }
+
+        div#floating {
+            --bord-w: 5px;
+            border: 5px solid var(--border-4);
+            background-color: var(--bg-lt);
+            /**/
+            padding: min(20px, 5%);
+            --t-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - var(--bord-w)*2 - min(20px, 5%)*2 + 10px), 410px);
+            width: var(--t-w);
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            p {
+                color: var(--text-main-acc);
+            }
+            input {
+                background-color: var(--bg-sec-X-lt);
+                border: solid 2px var(--border-2);
+                border-radius: 5px;
+                padding: 2px;
+                color: var(--text-sec-X-acc);
+                width: 100%;
+                margin-top: auto;
+            }
+            input::placeholder {
+                color: var(--text-sec-acc);
+            }
+            input:focus {
+                outline: none;
+                border: dashed 2px var(--border-2-acc);
+            }
+        }
+        @media (max-width: 540px) {
+            div#floating {
+                position: fixed;
+                top: calc(55px + 20px + 220px + 40px + 45px - 20px);
+            }
+            div#tech {
+                height: 240px;
+            }
+        }
+        @media (min-width: 540px) {
+            div#floating {
+                position: fixed;
+                width: 350px;
+                top: calc(55px + 20px - 5px);
+                right: 3%;
+            }
+        }
+    </style>
+</body>
+</html>
