@@ -24,6 +24,7 @@
         <script>
             function showres(res){
                 resplace = document.getElementById("result");
+                console.log(res);
                 animRewrite(resplace, res, 2);
             }
         </script>
@@ -79,7 +80,7 @@
         </div>
         <script>
             function modifyuser(){
-                showres("attempting smth");
+                showres("attempting modifyuser");
                 fetch(API+"admin/"+"modifyuser", {
                     method: "POST",
                     body: JSON.stringify({
@@ -107,7 +108,7 @@
         </div>
         <script>
             function getuser(){
-                showres("attempting smth");
+                showres("attempting getuser");
                 fetch(API+"admin/"+"getuser", {
                     method: "POST",
                     body: JSON.stringify({
@@ -250,6 +251,10 @@
             p#admin-code-hd {
                 margin-top: auto;
                 margin-bottom: 5px;
+            }
+            p#result {
+                width: 100%;
+                word-wrap: break-word;
             }
             input {
                 background-color: var(--bg-sec-X-lt);
