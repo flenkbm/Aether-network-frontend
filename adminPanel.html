@@ -29,8 +29,13 @@
         </script>
         <div id="floating">
             <p id="result">result will be here</p>
+            <p id="admin-code-hd">Admin code:</p>
             <input type="password" id="admin-code" placeholder="admin code">
         </div>
+        <script>
+            admin_code = localStorage.getItem("Aether-admin-code");
+            document.getElementById("admin-code").value = admin_code;
+        </script>
         <div class="command-block">
             <h3>Make code</h3>
             <input type="text" id="1-code-inp" placeholder="uuid4-code">
@@ -209,6 +214,10 @@
             p {
                 color: var(--text-main-acc);
             }
+            p#admin-code-hd {
+                margin-top: auto;
+                margin-bottom: 5px;
+            }
             input {
                 background-color: var(--bg-sec-X-lt);
                 border: solid 2px var(--border-2);
@@ -216,7 +225,6 @@
                 padding: 2px;
                 color: var(--text-sec-X-acc);
                 width: 100%;
-                margin-top: auto;
             }
             input::placeholder {
                 color: var(--text-sec-acc);
