@@ -21,6 +21,12 @@
         <h1 id="title">Aether Network</h1>
     </header>
     <main>
+        <script>
+            function showres(res){
+                resplace = document.getElementById("result");
+                animRewrite(resplace, res, 2);
+            }
+        </script>
         <div id="floating">
             <p id="result">result will be here</p>
             <input type="password" id="admin-code" placeholder="admin code">
@@ -32,59 +38,80 @@
             <input type="text" id="1-elem-count-inp" placeholder="amount of element">
             <input type="text" id="1-EXP-inp" placeholder="amount of EXP">
             <input type="text" id="1-cooldown-inp" placeholder="cooldown (in ms)">
-            <button class="submit">Enter &lt;/></button>
+            <button class="submit" onclick="makecode()">Enter &lt;/></button>
         </div>
         <script>
-            fetch(API+"admin/makecode", {
-                method: "POST",
-                body: JSON.stringify({
-                    code: doucment.getElementById("1-code-inp").value,
-                    element: doucment.getElementById("1-elem-inp").value,
-                    amount: doucment.getElementById("1-elem-count-inp").value,
-                    EXP: doucment.getElementById("1-EXP-inp").value,
-                    cooldown: doucment.getElementById("1-cooldown-inp").value,
-                    password: doucment.getElementById("admin-code").value
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
-            })
-            .then((response) => response.text())
-            .then((text) => console.log(text))
+            function makecode(){
+                showres("attempting makecode");
+                fetch(API+"admin/makecode", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        code: document.getElementById("1-code-inp").value,
+                        element: document.getElementById("1-element-inp").value,
+                        amount: document.getElementById("1-elem-count-inp").value,
+                        EXP: document.getElementById("1-EXP-inp").value,
+                        cooldown: document.getElementById("1-cooldown-inp").value,
+                        password: document.getElementById("admin-code").value
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then((response) => response.text())
+                .then((text) => {
+                    setTimeout(function () {
+                        showres(text)
+                    }, 1000)  
+                })
+            }
         </script>
         <div class="command-block">
 
         </div>
         <script>
-            fetch(API+"", {
-                method: "POST",
-                body: JSON.stringify({
-                    smth: doucment.getElementById("").value,
-                    password: doucment.getElementById("admin-code").value
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
-            })
-            .then((response) => response.text())
-            .then((text) => console.log(text))
+            function smth(){
+                showres("attempting smth");
+                fetch(API+"", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        smth: document.getElementById("").value,
+                        password: document.getElementById("admin-code").value
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then((response) => response.text())
+                .then((text) => {
+                    setTimeout(function () {
+                        showres(text)
+                    }, 1000)  
+                })
+            }
         </script>
         <div class="command-block">
 
         </div>
         <script>
-            fetch(API+"", {
-                method: "POST",
-                body: JSON.stringify({
-                    smth: doucment.getElementById("").value,
-                    password: doucment.getElementById("admin-code").value
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
-            })
-            .then((response) => response.text())
-            .then((text) => console.log(text))
+            function smth(){
+                showres("attempting smth");
+                fetch(API+"", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        smth: document.getElementById("").value,
+                        password: document.getElementById("admin-code").value
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then((response) => response.text())
+                .then((text) => {
+                    setTimeout(function () {
+                        showres(text)
+                    }, 1000)  
+                })
+            }
         </script>
         <div id="tech"></div>
     </main>
