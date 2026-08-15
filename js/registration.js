@@ -5,10 +5,10 @@ function registration() {
     var after_button = document.getElementById("after-action");
     //
     console.log("registration attempt")
-    var username = document.getElementById("nickname-input").value;
+    var username = document.getElementById("username-input").value;
     var password = document.getElementById("password-input").value;
     var re_password = document.getElementById("password-repeat").value;
-    console.log(`nickname ${username}\npassword ${password}`);
+    console.log(`username ${username}\npassword ${password}`);
     if (!username || !password) {
         show(overlay);
         hide(loading_circle);
@@ -68,7 +68,7 @@ function registration() {
             after_button.textContent = "Попробовать снова";
             after_button.setAttribute("onclick", "retry()");
         } else {
-            localStorage.setItem("Aether-user", JSON.stringify({"SID" : json, "timestamp" : Date.now()}));
+            localStorage.setItem("Aether-user", json);
             result_message.removeAttribute("techflag");
             result_message.textContent = "Регистрация прошла успешно!";
             after_button.textContent = "На главную";

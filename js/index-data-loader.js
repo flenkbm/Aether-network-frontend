@@ -26,18 +26,18 @@ function loadUserData() {
         userdata = json;
         console.log(userdata);//test thing
         // Data loading onto the page part
-        let nickplace = document.getElementById("nickname");
+        let nickplace = document.getElementById("username");
         let lvlplace = document.getElementById("lvl");
         let xpbar = document.getElementById("xp-bar");
         let xpplace = document.getElementById("xp-disp");
         let progressplace = document.getElementById("total-progress");
-        if (nickplace.textContent != userdata["nickname"]) {
-            animRewrite(document.getElementById("nickname"), userdata["nickname"]);
+        if (nickplace.textContent != userdata["username"]) {
+            animRewrite(document.getElementById("username"), userdata["username"]);
         }
         animRewrite(lvlplace, `lvl ${userdata["LVL"]}`, 6);
         xpbar.style.setProperty("--xp-percent", `${userdata["EXP"]/appdata["levelup-EXP"][userdata["LVL"]+1]*100}%`);
         animRewrite(xpplace, `EXP ${userdata["EXP"]}/${appdata["levelup-EXP"][userdata["LVL"]+1]}`);
-        progressplace.textContent = `Прогресс сбора элементов: ${userdata["created"].length} из ${appdata["total-elements"]}`;
+        progressplace.textContent = `Прогресс сбора элементов: ${userdata["inventory"].length} из ${appdata["total-elements"]}`;
     });
 }
 

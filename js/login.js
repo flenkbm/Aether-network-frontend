@@ -5,9 +5,9 @@ function login() {
     var after_button = document.getElementById("after-action");
     //
     console.log("login attempt")
-    var username = document.getElementById("nickname-input").value;
+    var username = document.getElementById("username-input").value;
     var password = document.getElementById("password-input").value;
-    console.log(`nickname ${username}\npassword ${password}`);
+    console.log(`username ${username}\npassword ${password}`);
     if (!username || !password) {
         show(overlay);
         hide(loading_circle);
@@ -41,7 +41,7 @@ function login() {
             after_button.textContent = "Попробовать снова";
             after_button.setAttribute("onclick", "retry()");
         } else {
-            localStorage.setItem("Aether-user", JSON.stringify({"SID" : json, "timestamp" : Date.now()}));
+            localStorage.setItem("Aether-user", json);
             result_message.removeAttribute("techflag");
             result_message.textContent = "Вход прошёл успешно!";
             after_button.textContent = "На главную";
