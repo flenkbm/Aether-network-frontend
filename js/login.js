@@ -17,7 +17,7 @@ function login() {
         after_button.setAttribute("onclick", "retry()");
         return;
     }
-    fetch("https://88.210.12.42:8000/API/login", {
+    fetch(API+"login", {
         method: "POST",
         body: JSON.stringify({
             username: username,

@@ -45,7 +45,7 @@ function registration() {
         after_button.setAttribute("onclick", "retry()");
         return;
     }
-    fetch("https://88.210.12.42:8000/API/registration", {
+    fetch(API+"registration", {
         method: "POST",
         body: JSON.stringify({
             username: username,
