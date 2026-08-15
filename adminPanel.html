@@ -48,7 +48,7 @@
         <script>
             function makecode(){
                 showres("attempting makecode");
-                fetch(API+"admin/makecode", {
+                fetch(API+"makecode", {
                     method: "POST",
                     body: JSON.stringify({
                         code: document.getElementById("1-code-inp").value,
@@ -71,15 +71,47 @@
             }
         </script>
         <div class="command-block">
-
+            <h3>Modify user</h3>
+            <input type="text" id="2-username-inp" placeholder="username">
+            <input type="text" id="2-variable-inp" placeholder="variable">
+            <input type="text" id="2-value-inp" placeholder="value">
+            <button class="submit" onclick="modifyuser()">Enter &lt;/></button>
+        </div>
+        <script>
+            function modifyuser(){
+                showres("attempting smth");
+                fetch(API+"admin/"+"modifyuser", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        username: document.getElementById("2-username-inp").value,
+                        variable: document.getElementById("2-variable-inp").value,
+                        value: document.getElementById("2-value-inp").value,
+                        password: document.getElementById("admin-code").value
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then((response) => response.text())
+                .then((text) => {
+                    setTimeout(function () {
+                        showres(text)
+                    }, 1000)  
+                })
+            }
+        </script>
+        <div class="command-block">
+            <h3>Get user</h3>
+            <input type="text" id="3-username-inp" placeholder="username">
+            <button class="submit" onclick="modifyuser()">Enter &lt;/></button>
         </div>
         <script>
             function smth(){
                 showres("attempting smth");
-                fetch(API+"", {
+                fetch(API+"admin/"+"getuser", {
                     method: "POST",
                     body: JSON.stringify({
-                        smth: document.getElementById("").value,
+                        username: document.getElementById("3-username-inp").value,
                         password: document.getElementById("admin-code").value
                     }),
                     headers: {
@@ -100,7 +132,7 @@
         <script>
             function smth(){
                 showres("attempting smth");
-                fetch(API+"", {
+                fetch(API+"admin/"+"", {
                     method: "POST",
                     body: JSON.stringify({
                         smth: document.getElementById("").value,
