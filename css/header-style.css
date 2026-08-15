@@ -14,19 +14,18 @@ header {
     align-items: center;
     justify-content: space-between;
     /**/
-    --theme-toggler-size: min(100px, calc(var(--hd-h)*0.4));
-    img#theme-toggler {
-        aspect-ratio: 1/1;
-        height: var(--theme-toggler-size);
-        background: var(dbg-bg41);
-        margin: 0 2.5%;
+    --theme-toggler-size: min(100px, calc(var(--hd-h)*0.5));
+    img#logout-btn {
+        aspect-ratio: 3/2;
+        width: var(--theme-toggler-size);
+        margin-right: 2.5%;
     }
     h1#title {
         font-family: 'Iceland';
         width: fit-content;
         color: var(--text-main-X-acc);
         font-size: min(calc(var(--hd-h)), calc((var(--screen-w)*0.9 - var(--theme-toggler-size))/6.4));
-        margin: 0 2.5%;
+        margin-left: 2.5%;
         font-weight: bold;
         /*
         8.4 * size = width;

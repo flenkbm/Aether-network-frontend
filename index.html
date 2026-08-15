@@ -7,7 +7,6 @@
     <script src="https://unpkg.com/qr-scanner" type="module"></script>
     <script src="js/func.js"></script>
     <script src="js/screen-size-getter.js"></script>
-    <script src="js/style-switch.js"></script>
     <script src="js/index-data-loader.js"></script>
     <script src="js/scanner.js"></script>
     <!---->
@@ -24,7 +23,7 @@
 <body class="dark-mode">
     <header>
         <h1 id="title">Aether Network</h1>
-        <img src="img/theme-toggler-dark.png" id="theme-toggler" onclick="toggleTheme()">
+        <img src="img/logout-btn.png" id="logout-btn" onclick="localStorage.removeItem('Aether-user');location.reload()">
     </header>
     <main>
         <div id="account-block">
@@ -45,21 +44,6 @@
             </div>
             <button id="stop-scan" onclick="stopScanner('cancel')" class="hidden">Выключить сканер</button>
         </div>
-        <button onclick="localStorage.removeItem('Aether-user');location.reload()" class="temp">Временная кнопка выхода</button>
-        <style>
-            button.temp {
-                margin-top: 20px;
-                width: 100px;
-                background-image: linear-gradient(120deg, var(--bg-sec-X-lt) -20%, var(--bg-sec-lt));
-                color: var(--text-sec-acc);
-                border: none;
-                border-image-source: url("img/border-slice-X-acc-dark.png");;
-                border-image-repeat: round;
-                border-image-slice: 10;
-                border-image-width: 4px;
-                border-image-outset: 4px;
-            }
-        </style>
     </main>
 </body>
 </html>

@@ -1,31 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
-body {
-    --bg-main: #e3f2fd;
-    --bg-lt: #f5fbff;
-    --bg-dk: #bbdefb;
-    --bg-sec: #bbadff;
-    --bg-sec-lt: #cfc5ff;
-    --bg-sec-X-lt: #e9e5fd;
-    --bg-sec-dk: #ada7ff;
-    /**/
-    --text-main: hsl(200, 80%, 40%);
-    --text-main-acc: hsl(200, 100%, 40%);
-    --text-main-X-acc: hsl(200, 100%, 50%);
-    --text-sec: hsl(220, 00%, 90%);
-    --text-sec-acc: hsl(220, 00%, 70%);
-    --text-sec-X-acc: hsl(220, 00%, 50%);
-    --link: hsl(240, 100%, 50%);
-    /**/
-    --border-main: hsl(200, 80%, 60%);
-    --border-img-main: url("../img/border-slice-X-acc-light.png");
-    --border-1: hsl(60, 100%, 50%);
-    --border-2: hsl(230, 90%, 70%);
-    --border-2-acc: hsl(230, 100%, 75%);
-    /**/
-    --xp-col: hsl(60, 100%, 50%);
-}
 
-body.dark-mode {
+body {
     --bg-main: hsl(220, 100%, 5%);
     --bg-main: #0a1128;
     --bg-lt: hsl(220, 100%, 10%);
@@ -45,7 +20,7 @@ body.dark-mode {
     --link: hsl(240, 80%, 60%);
     /**/
     --border-main: hsl(200, 80%, 60%);
-    --border-img-main: url("../img/border-slice-X-acc-dark.png");
+    --border-img-main: url("../img/border-slice-X-acc.png");
     --border-1: hsl(60, 100%, 50%);
     --border-2: hsl(260, 10%, 50%);
     --border-2-acc: hsl(260, 15%, 70%);
