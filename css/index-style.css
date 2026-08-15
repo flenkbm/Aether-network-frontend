@@ -54,7 +54,7 @@ div#account-block {
         width: 100%;
         margin-bottom: 5px;
         /**/
-        h2#nickname {
+        h2#username {
             color: var(--text-main);
         }
         p#lvl {
