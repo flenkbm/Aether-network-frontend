@@ -37,7 +37,8 @@ function loadUserData() {
         animRewrite(lvlplace, `lvl ${userdata["LVL"]}`, 6);
         xpbar.style.setProperty("--xp-percent", `${userdata["EXP"]/appdata["levelup-EXP"][userdata["LVL"]+1]*100}%`);
         animRewrite(xpplace, `EXP ${userdata["EXP"]}/${appdata["levelup-EXP"][userdata["LVL"]+1]}`);
-        progressplace.textContent = `Прогресс сбора элементов: ${userdata["inventory"].length} из ${appdata["total-elements"]}`;
+        let elem_cnt = 0;
+        progressplace.textContent = `Прогресс сбора элементов: ${Object.keys(userdata["inventory"]).length} из ${appdata["total-elements"]}`;
     });
 }
 
