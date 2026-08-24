@@ -47,9 +47,12 @@
                 <!-- <button class="inv-item" onclick="selectCraft('___')">___</button> -->
             </div>
             <div id="craft-block" class="hidden">
-                <div id="craft-1"></div>
-                <div id="craft-2"></div>
-                <button id="craft-btn" onclick="tryCraft()">Объединить</button>
+                <div id="craft-items">
+                    <button id="craft-1" onclick="removeCraft()">elem 1</button>
+                    <p>+</p>
+                    <button id="craft-2" onclick="removeCraft()">elem 2</button>
+                </div>
+                <button id="craft-try" onclick="tryCraft()">Объединить</button>
             </div>
             <button id="inv-close" onclick="closeInventory()" class="hidden">Закрыть инвентарь</button>
         </div>
