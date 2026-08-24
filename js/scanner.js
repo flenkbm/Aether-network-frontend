@@ -60,6 +60,7 @@ function startScanner() {
     show(document.getElementById("vid-cont"));
     show(document.getElementById("stop-scan"));
     hide(document.getElementById("start-scan"));
+    document.getElementById("scanner-block").classList.remove("interactive-cont");
 }
 
 async function stopScanner(res, dt=0) {
@@ -69,7 +70,8 @@ async function stopScanner(res, dt=0) {
     hide(document.getElementById("vid-cont"));
     hide(document.getElementById("stop-scan"));
     show(startScan);
-    var btn_text = "Начать сканирование";
+    document.getElementById("scanner-block").classList.add("interactive-cont");
+    var btn_text = "Включить сканер";
     var timetoread = 1500;
     if (res == "success") {
         startScan.textContent = "Код прочитан успешно!";

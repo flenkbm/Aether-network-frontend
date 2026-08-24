@@ -40,13 +40,15 @@ main {
     --in-w: min(calc(var(--screen-w) - var(--main-padding-w)*2 - 10px*2), calc(400px + 20px));
 }
 
-div#account-block {
+main > div {
     background-color: var(--bg-sec);
     padding: 10px;
     width: var(--in-w);
     border: 2px var(--border-4) dashed;
     margin-bottom: 20px;
-    /**/
+}
+
+div#account-block {
     div.top-block {
         display: flex;
         align-items: center;
@@ -101,16 +103,11 @@ div#account-block {
 }
 
 div#scanner-block {
-    border: 3px solid var(--border-main);
-    padding: 10px;
-    width: var(--in-w);
-    background-color: var(--bg-sec-dk);
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    button {
+    > button {
         height: 40px;
         color: var(--text-main-acc);
         font-weight: 500;
@@ -141,12 +138,6 @@ div#scanner-block {
 }
 
 div#toplist-block {
-    background-color: var(--bg-sec);
-    padding: 10px;
-    width: var(--in-w);
-    border: 2px var(--border-4) dashed;
-    margin-bottom: 20px;
-    /**/
     ol#toplist {
         list-style-position: inside;
         color: var(--text-main);
@@ -174,7 +165,7 @@ div#toplist-block {
             font-weight: normal;
             width: fit-content;
             position: absolute;
-            right: calc(var(--main-padding-w) + 10px - 3px);
+            right: calc((var(--screen-w) - var(--in-w)) / 2);
             color: var(--xp-col)
         }
     }
@@ -182,4 +173,14 @@ div#toplist-block {
 
 .hidden {
     display: none !important;
+}
+
+.interactive-cont {
+    border: 3px ridge var(--border-main);
+    background-color: var(--bg-sec-dk);
+    --corner: 0px;
+    clip-path: polygon(var(--corner) 0, calc(100% - var(--corner)) 0, 100% var(--corner), 100% calc(100% - var(--corner)), calc(100% - var(--corner)) 100%, var(--corner) 100%, 0 calc(100% - var(--corner)), 0 var(--corner));
+    * {
+        text-shadow: hsl(from var(--text-main-acc) h calc(s - 0) calc(l - 50)) 1px 1px;
+    }
 }
