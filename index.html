@@ -9,6 +9,7 @@
     <script src="js/screen-size-getter.js"></script>
     <script src="js/index-data-loader.js"></script>
     <script src="js/scanner.js"></script>
+    <script src="js/craft.js"></script>
     <!---->
     <link rel="stylesheet" href="css/color-scheme.css">
     <link rel="stylesheet" href="css/index-style.css">
@@ -39,6 +40,21 @@
                 <video id="scan-vid-disp"></video>
             </div>
             <button id="stop-scan" onclick="stopScanner('cancel')" class="hidden">Выключить сканер</button>
+        </div>
+        <div id="inventory-block" class="interactive-cont">
+            <button id="inv-open" onclick="openInventory()">Открыть инвентарь</button>
+            <div id="inventory" class="hidden">
+                <!-- <button class="inv-item" onclick="selectCraft('___')">___</button> -->
+            </div>
+            <div id="craft-block" class="hidden">
+                <div id="craft-1"></div>
+                <div id="craft-2"></div>
+                <button id="craft-btn" onclick="tryCraft()">Объединить</button>
+            </div>
+            <button id="inv-close" onclick="closeInventory()" class="hidden">Закрыть инвентарь</button>
+        </div>
+        <div id="map-main" style="color: var(--text-main); font-family: 'Courier New', Courier, monospace;">
+            тут будет карта (скоро)
         </div>
         <div id="toplist-block">
             <ol id="toplist">
