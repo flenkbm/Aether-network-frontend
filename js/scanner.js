@@ -41,7 +41,7 @@ async function resultProcess(res) {
             qrScanner.start();
             return
         } else if (json == "-3") {
-            stopScanner("cooldown", Math.ceil((userdata["nextscans"][res]-Date.now())/1000/60));
+            stopScanner("cooldown", Math.ceil((userdata["scans"][res]-Date.now())/1000/60));
             return
         } else if (json == "-1") {
             stopScanner("sid error");
