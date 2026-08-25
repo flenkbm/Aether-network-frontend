@@ -230,9 +230,8 @@ div#craft-block {
             border-image-slice: 10;
             border-image-width: 3px;
             border-image-outset: 3px;
-            letter-spacing: 2px;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 22px;
             font-family: 'Courier New', Courier, monospace;
             word-wrap: break-word;
         }
