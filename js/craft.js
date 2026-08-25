@@ -96,20 +96,34 @@ function tryCraft() {
     })
     .then((json) => {
         console.log(json);
-        loadUserData();
         if (json == "-1") {
             closeInventory();
             document.getElementById("inv-open").textContent = "Произошла ошибка!\nНеобходимо перезагрузить страницу.";
             document.getElementById("inv-open").setAttribute("onclick", "window.location.reload()");
             document.getElementById("inv-open").style.setProperty("height", "60px");
+            document.getElementById("inv-open").style.setProperty("font-size", "16px");
             localStorage.removeItem("Aether-user");
             setTimeout(() => {
                 animRewrite(document.getElementById("inv-open"), "Нажмите чтобы перезагрузить");
             }, 2500);
             return
         } else if (json == "-2") {
-            
+            loadUserData();
+            document.getElementById("craft-try").textContent = "Что-то сломалось!\nПопробуйте снова";
+            document.getElementById("inv-open").style.setProperty("height", "60px");
+            document.getElementById("craft-try").style.setProperty("font-size", "16px");
+            document.getElementById("craft-block").classList.add("craft-fail");
+            setTimeout(() => {
+                document.getElementById("craft-block").classList.remove("craft-fail");
+                document.getElementById("inv-open").style.removeProperty("height");
+            }, 200);
+            setTimeout(() => {
+                animRewrite(document.getElementById("craft-try"), "Объединить");
+            }, 3000);
+            document.getElementById("craft-1").textContent = "------";
+            document.getElementById("craft-2").textContent = "------";
         } else if (json == "-3") {
+            loadUserData();
             document.getElementById("craft-try").textContent = "Ошибка! Нет рецепта!";
             document.getElementById("craft-try").style.setProperty("font-size", "16px");
             document.getElementById("craft-block").classList.add("craft-fail");
@@ -118,8 +132,12 @@ function tryCraft() {
             }, 200);
             setTimeout(() => {
                 animRewrite(document.getElementById("craft-try"), "Объединить");
+                setTimeout(() => {document.getElementById("craft-try").style.removeProperty("font-size")}, 600);
             }, 3000);
+            document.getElementById("craft-1").textContent = "------";
+            document.getElementById("craft-2").textContent = "------";
         } else {
+            loadUserData();
             document.getElementById("craft-try").textContent = "Успех!";
             document.getElementById("craft-block").classList.add("craft-success");
             setTimeout(() => {
@@ -135,7 +153,14 @@ function tryCraft() {
             loadInventory();
             loadToplist();
         }, 500);
-        
+        setTimeout(() => {
+            loadInventory();
+            loadToplist();
+        }, 2000);
+        setTimeout(() => {
+            loadInventory();
+            loadToplist();
+        }, 4000);
         return;
     });
 }

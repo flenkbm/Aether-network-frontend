@@ -201,7 +201,8 @@ div#craft-block {
     margin-bottom: 10px;
     border-bottom: 2px var(--border-2) dashed;
     background-color: transparent;
-    transition-property: background-color;
+    box-shadow: none;
+    transition-property: background-color, box-shadow;
     transition-duration: 2s;
     display: flex;
     flex-direction: column;
@@ -249,6 +250,7 @@ div#craft-block {
 div.craft-fail {
     transition-duration: 0.2s !important;
     background-color: rgba(255, 0, 0, 0.4) !important;
+    box-shadow: 0px 0px 20px 20px rgba(255, 0, 0, 0.4) !important;
     * {
         z-index: 10;
     }
@@ -257,6 +259,7 @@ div.craft-fail {
 div.craft-success {
     transition-duration: 0.2s !important;
     background-color: rgba(0, 255, 0, 0.4) !important;
+    box-shadow: 0px 0px 20px 20px rgba(0, 255, 0, 0.4) !important;
     * {
         z-index: 10;
     }
