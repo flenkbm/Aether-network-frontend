@@ -42,6 +42,7 @@ function login() {
             after_button.setAttribute("onclick", "retry()");
         } else if (json == "banned") {
             result_message.removeAttribute("techflag");
+            result_message.style.setProperty("width", "100%", "!important");
             result_message.textContent = "Вы были забанены! По вопросам о причине бана и возможности разблокировки обращайтесь к @flenkbm в телеграме";
             after_button.textContent = "https:/t.me/flenkbm";
             after_button.setAttribute("onclick", "window.location.href='https://t.me/flenkbm'");
