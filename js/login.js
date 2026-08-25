@@ -40,6 +40,10 @@ function login() {
             result_message.textContent = "Ошибка! Введён неправильный логин или пароль.";
             after_button.textContent = "Попробовать снова";
             after_button.setAttribute("onclick", "retry()");
+        } else if (json == "banned") {
+            result_message.textContent = "Вы были забанены! По вопросам о причине бана и возможности разблокировки обращайтесь к @flenkbm в телеграме";
+            after_button.textContent = "https:/t.me/flenkbm";
+            after_button.setAttribute("onclick", "window.location.href='https:/t.me/flenkbm'");
         } else {
             localStorage.setItem("Aether-user", json);
             result_message.removeAttribute("techflag");

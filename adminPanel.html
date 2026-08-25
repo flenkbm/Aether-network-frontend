@@ -128,6 +128,32 @@
             }
         </script>
         <div class="command-block">
+            <h3>Ban user</h3>
+            <input type="text" id="4-username-inp" placeholder="username">
+            <button class="submit" onclick="banuser()">Enter &lt;/></button>
+        </div>
+        <script>
+            function banuser(){
+                showres("attempting ban user");
+                fetch(API+"admin/"+"banuser", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        username: document.getElementById("4-username-inp").value,
+                        password: document.getElementById("admin-code").value
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then((response) => response.text())
+                .then((text) => {
+                    setTimeout(function () {
+                        showres(text)
+                    }, 1000)  
+                })
+            }
+        </script>
+        <div class="command-block">
 
         </div>
         <script>
