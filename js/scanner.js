@@ -47,9 +47,11 @@ async function resultProcess(res) {
             stopScanner("sid error");
             return
         }
-        loadUserData();
-        loadToplist();
-        stopScanner("success");
+        loadUserData().then(() => {
+            loadToplist();
+            stopScanner("success");
+        });
+        
         return;
     });
 }

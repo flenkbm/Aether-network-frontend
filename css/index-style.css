@@ -200,6 +200,9 @@ div#craft-block {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 2px var(--border-2) dashed;
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: 2s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,6 +243,22 @@ div#craft-block {
             border: solid 3px var(--border-main);
             width: 80%;
         }
+    }
+}
+
+div.craft-fail {
+    transition-duration: 0.2s !important;
+    background-color: rgba(255, 0, 0, 0.4) !important;
+    * {
+        z-index: 10;
+    }
+}
+
+div.craft-success {
+    transition-duration: 0.2s !important;
+    background-color: rgba(0, 255, 0, 0.4) !important;
+    * {
+        z-index: 10;
     }
 }
 
