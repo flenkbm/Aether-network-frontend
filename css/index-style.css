@@ -102,6 +102,33 @@ div#account-block {
     }
 }
 
+div#admin-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-color: var(--border-1);
+    border-width: 3px;
+    background-color: var(--bg-sec-dk);
+    h1 {
+        color: var(--text-main-X-acc);
+        margin-bottom: 15px;
+        margin-top: -5px;
+        font-size: 22px;
+    }
+    p {
+        color: var(--text-main);
+        font-size: 17px;
+    }
+}
+@media (max-width: 540px) {
+    div#admin-news h1 {
+        text-align: center;
+        width: 90%;
+        align-self: center;
+    }
+}
+
+
 div#scanner-block {
     display: flex;
     flex-direction: column;
