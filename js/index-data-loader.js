@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     }).then((json) => {
         appdata = json;
+        document.getElementById("admin-news").children[1].innerHTML = appdata["admin-news"];
         console.log(appdata);
         //
         SID = localStorage.getItem("Aether-user");
