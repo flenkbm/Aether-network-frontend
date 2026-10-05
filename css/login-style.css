@@ -82,13 +82,13 @@ div#reg-block div.cont {
         font-weight: 500;
         font-size: 20px;
     }
-    a {
+    a#to-reg {
         width: fit-content;
         align-self: center;
-        color: var(--text-sec);
+        color: var(--text-sec-X-acc);
         text-decoration: none;
         span {
-            color: var(--link);
+            color: var(--link-lt);
         }
     }
 }

@@ -20,6 +20,7 @@ body {
     --text-sec-acc: hsl(220, 00%, 70%);
     --text-sec-X-acc: hsl(220, 00%, 90%);
     --link: hsl(240, 80%, 60%);
+    --link-lt: hsl(220, 100%, 65%);
     /**/
     --border-main: hsl(200, 80%, 60%);
     --border-img-main: url("../img/border-slice-X-acc.png");
