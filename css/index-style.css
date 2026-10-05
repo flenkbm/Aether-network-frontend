@@ -118,6 +118,9 @@ div#admin-news {
     p {
         color: var(--text-main);
         font-size: 17px;
+        a {
+            color: var(--link-lt);
+        }
     }
 }
 @media (max-width: 540px) {
